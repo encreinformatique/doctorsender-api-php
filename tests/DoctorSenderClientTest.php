@@ -5,7 +5,7 @@ namespace tests\EncreInformatique\DoctorSenderApi;
 use PHPUnit\Framework\TestCase;
 use EncreInformatique\DoctorSenderApi\DoctorSenderClient;
 
-class DoctorSenderClientTests extends TestCase
+class DoctorSenderClientTest extends TestCase
 {
     /**
      * @test

@@ -72,10 +72,10 @@ class DoctorSenderClient
         }
 
         if (!is_array($result)) {
-            throw new Exception("Error occurred in webservice call");
+            throw new \Exception("Error occurred in webservice call");
         }
         if ($result["error"] === true) {
-            throw new Exception($result["msg"]);
+            throw new \Exception($result["msg"]);
         } else {
             return $result["msg"];
         }
