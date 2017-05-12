@@ -7,3 +7,11 @@ php:
   - '7.1'
   - hhvm
   - nightly
+
+script:
+  - |
+    if [[ $PHP = 5.4.* || $PHP = 5.5.* ]]; then
+      ./vendor/bin/phpunit-4.8
+    else
+      ./vendor/bin/phpunit
+    fi
