@@ -21,3 +21,21 @@ Installation instruction
 
 2. Add the package to your dependencies by running
 `composer require encreinformatique/doctorsender-api-php`
+
+Summary
+-------
+* [Installation](installation.md)
+* [Endpoints](endpoints.md)
+* [Example](example.md)
+
+Requisites
+----------
+You will obviously need a DoctorSender account, a user and an API token.
+We are not affiliate in any way to DoctorSender. Please refer to DoctorSender for more information.
+
+More information about the [DoctorSender API](http://soapwebservice.doctorsender.com/doxy/html/).
+
+About
+-----
+
+This bundle is developped by [TLH](https://www.encreinformatique.com/)

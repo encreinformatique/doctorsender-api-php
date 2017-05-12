@@ -1,5 +1,5 @@
 {
-  "name": "tousleshoraires/doctorsender-api-php",
+  "name": "encreinformatique/doctorsender-api-php",
   "description": "A PHP wrapper for the DoctorSender API",
   "type": "library",
   "authors": [
@@ -10,12 +10,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "TousLesHoraires\\DoctorSenderApi\\": "src/"
+      "EncreInformatique\\DoctorSenderApi\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "TousLesHoraires\\DoctorSenderApi\\Tests\\": "tests/"
+      "EncreInformatique\\DoctorSenderApi\\Tests\\": "tests/"
     }
   },
   "require": {
