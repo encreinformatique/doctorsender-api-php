@@ -1,0 +1,29 @@
+{
+  "name": "tousleshoraires/doctorsender-api-php",
+  "description": "A PHP wrapper for the DoctorSender API",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Julien Devergnies",
+      "email": "j.devergnies@outlook.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "TousLesHoraires\\DoctorSenderApi\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "TousLesHoraires\\DoctorSenderApi\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^5.6|^7.0",
+    "roave/security-advisories": "dev-master",
+    "psr/log": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.7"
+  }
+}
