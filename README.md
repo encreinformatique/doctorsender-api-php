@@ -1,4 +1,6 @@
 # DoctorSender API PHP
+[![Build Status](https://travis-ci.org/encreinformatique/doctorsender-api-php.svg?branch=master)](https://travis-ci.org/encreinformatique/doctorsender-api-php)
+[![Downloads](https://img.shields.io/packagist/dt/encreinformatique/doctorsender-api-php.svg)](https://packagist.org/packages/encreinformatique/doctorsender-api-php)
 ====================
 This repository is a PHP wrapper for the DoctorSender API.
 
