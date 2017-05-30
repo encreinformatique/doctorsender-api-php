@@ -41,7 +41,7 @@ class Campaigns extends Endpoint
         $sqlWhere = 'status = \'finished\'';
 
         /*
-         * We define the fields.
+         * We define the Date filters.
          */
         if (isset($options['date'])) {
             if (!empty($options['date']['start'])) {
@@ -56,6 +56,18 @@ class Campaigns extends Endpoint
             }
 
             $sqlWhere.= ' and '.$sqlWhereDate;
+        }
+
+        /*
+         * We define the List filters.
+         */
+        if (isset($options['list']) && preg_match("`([A-z0-9 _-]+)`", $options['list'])) {
+            // We clean the string
+            $options['list'] = trim($options['list']);
+
+            $sqlWhereList = 'user_list = \''.$options['list'].'\'';
+
+            $sqlWhere.= ' and '.$sqlWhereList;
         }
 
         /*

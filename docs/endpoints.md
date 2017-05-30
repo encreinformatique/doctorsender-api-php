@@ -5,6 +5,11 @@ Campaigns
 ---------
 
  - campaigns/list
+   the current options are:
+    - date
+      - start: starting date to fetch the campaigns
+      - end: ending date to fetch the campaigns
+    - list: list of the users into DoctorSender (equivalent to user_list) 
  - campaigns/{id}
    - {id} is the ID of the Campaign.
 
