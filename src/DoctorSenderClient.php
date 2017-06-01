@@ -54,7 +54,7 @@ class DoctorSenderClient
             throw new \Exception("The endpoint does not exist.");
         }
 
-        $endPointName = '\EncreInformatique\DoctorSenderApi\Endpoints\\'.$points[0];
+        $endPointName = '\EncreInformatique\DoctorSenderApi\Endpoints\\'.ucfirst($points[0]);
 
         if (!class_exists($endPointName)) {
             throw new \Exception("The endpoint does not exist.");
