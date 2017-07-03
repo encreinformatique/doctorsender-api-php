@@ -1,6 +1,7 @@
 # DoctorSender API PHP
 [![Build Status](https://travis-ci.org/encreinformatique/doctorsender-api-php.svg?branch=master)](https://travis-ci.org/encreinformatique/doctorsender-api-php)
 [![Downloads](https://img.shields.io/packagist/dt/encreinformatique/doctorsender-api-php.svg)](https://packagist.org/packages/encreinformatique/doctorsender-api-php)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/faded0ba-05e4-41cf-8341-7ffc73e6d6b9/small.png)](https://insight.sensiolabs.com/projects/faded0ba-05e4-41cf-8341-7ffc73e6d6b9)
 ====================
 This repository is a PHP wrapper for the DoctorSender API.
 
@@ -23,3 +24,11 @@ Installation instruction
 
 2. Add the package to your dependencies by running
 `composer require encreinformatique/doctorsender-api-php`
+
+Documentation
+-------------
+The documentation is located in the docs/ folder.
+
+Contributing
+------------
+You can help us with the project contributing code or documentation.
