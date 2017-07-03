@@ -2,6 +2,7 @@
   "name": "encreinformatique/doctorsender-api-php",
   "description": "A PHP wrapper for the DoctorSender API",
   "type": "library",
+  "license": "MIT",
   "authors": [
     {
       "name": "Julien Devergnies",
