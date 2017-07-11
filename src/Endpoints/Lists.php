@@ -28,9 +28,9 @@ class Lists extends Endpoint
         }
 
         return $this->client->webservice(
-                'dsUsersListGetAll',
-                array($isTestList)
-            );
+            'dsUsersListGetAll',
+            array($isTestList)
+        );
     }
 
     /**
@@ -57,8 +57,8 @@ class Lists extends Endpoint
         }
 
         return $this->client->webservice(
-                'dsUsersListGetFields',
-                array($listName, $isTestList, $getType)
-            );
+            'dsUsersListGetFields',
+            array($listName, $isTestList, $getType)
+        );
     }
 }
