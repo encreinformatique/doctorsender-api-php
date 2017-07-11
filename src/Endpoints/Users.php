@@ -21,7 +21,7 @@ class Users extends Endpoint
      */
     public function create($options)
     {
-        if (!isset($options['name'])) {
+        if (!isset($options['listName'])) {
             return ['error' => true, 'msg' => 'no name of list was provided'];
         }
         /*
@@ -30,7 +30,7 @@ class Users extends Endpoint
         if (!isset($options['user']) || !isset($options['user']['email'])) {
             return ['error' => true, 'msg' => 'no correct user was provided'];
         }
-        $listName = $options['name'];
+        $listName = $options['listName'];
         $user = $options['user'];
 
         if (isset($options['isTestList'])) {

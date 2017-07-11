@@ -33,5 +33,14 @@ Lists
      - default: true 
      - True to get all the fields names, types and lengths, False to get only names and types
 
+Users
+-----
+ - create
+   - string name
+     - Name of the list, it is mandatory and sensible to case.
+   - array user
+     - Array of the user information
+     - It must contains a key email.
+
 All the endpoints accept options.
 The call returns an Array with the result.
