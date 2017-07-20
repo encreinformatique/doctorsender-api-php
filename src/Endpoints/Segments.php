@@ -19,7 +19,7 @@ class Segments extends Endpoint
      *
      * @param $options
      */
-    public function getSegments($options)
+    public function getList($options)
     {
         if (!isset($options['name'])) {
             return ['error' => true, 'msg' => 'no name of list was provided'];
