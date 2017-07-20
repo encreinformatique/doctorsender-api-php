@@ -33,5 +33,12 @@ Lists
      - default: true 
      - True to get all the fields names, types and lengths, False to get only names and types
 
+Segments
+--------
+- segments/list
+  - string name
+    - required
+    - name of the list, it is mandatory and sensible to case.
+
 All the endpoints accept options.
 The call returns an Array with the result.
