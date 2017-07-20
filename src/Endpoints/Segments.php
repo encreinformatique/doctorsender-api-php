@@ -24,7 +24,7 @@ class Segments extends Endpoint
         if (!isset($options['name'])) {
             return ['error' => true, 'msg' => 'no name of list was provided'];
         }
-        $listName = $options['name'];
+        $listName = str_replace("list_", "", $options['name']);
 
         return $this->client->webservice(
             'dsSegmentsGetByListName',
