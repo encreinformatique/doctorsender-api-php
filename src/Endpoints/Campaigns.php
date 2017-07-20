@@ -79,10 +79,19 @@ class Campaigns extends Endpoint
             $fields = $this->fields;
         }
 
+        /*
+         * Override the limit.
+         */
+        if (isset($options['limit'])) {
+            $limit = $options['limit'];
+        } else {
+            $limit = $this->limit;
+        }
+
         return $this->client->webservice(
-                'dsCampaignGetAll',
-                array($sqlWhere, $fields, $this->withStatistics, $this->limit)
-            );
+            'dsCampaignGetAll',
+            array($sqlWhere, $fields, $this->withStatistics, $limit)
+        );
     }
 
     /**
@@ -107,8 +116,8 @@ class Campaigns extends Endpoint
         }
 
         return $this->client->webservice(
-                'dsCampaignGet',
-                array($idCampaign, $fields, $this->withStatistics)
-            );
+            'dsCampaignGet',
+            array($idCampaign, $fields, $this->withStatistics)
+        );
     }
 }

@@ -63,10 +63,13 @@ class DoctorSenderClient
         $endPoint = new $endPointName($this->client);
         /*
          * If we have an ID as second part, call getOne.
+         * Create is a proper method of the endpoints.
          */
         if (is_numeric($points[1])) {
             $options['id'] = $points[1];
             $result = $endPoint->__call('getOne', $options);
+        } elseif ($points[1] == 'create') {
+            $result = $endPoint->__call('create', $options);
         } else {
             $result = $endPoint->__call('get'.ucfirst($points[1]), $options);
         }

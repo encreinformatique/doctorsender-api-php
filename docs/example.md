@@ -11,3 +11,20 @@ try {
     echo 'result of campaigns/list:'.PHP_EOL.$e->getMessage().PHP_EOL;
 }
 ```
+
+```php
+$user = array(
+    'email' => 'email@domain.tld',
+    'field_firstname' => 'firstname',
+    'field_lastname' => 'lastname'
+);
+
+$ws = new DoctorSenderClient($username, $api_token);
+try {
+    $response = $ws->makeRequest('users/create', ['listName' => 'list1', 'user' => $user, 'isTestList' => false]);
+
+    echo 'result of users/create:'.PHP_EOL.print_r($response, true).PHP_EOL;
+} catch (\Exception $e) {
+    echo 'result of users/create:'.PHP_EOL.$e->getMessage().PHP_EOL;
+}
+```
