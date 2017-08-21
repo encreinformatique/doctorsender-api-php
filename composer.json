@@ -3,6 +3,10 @@
   "description": "A PHP wrapper for the DoctorSender API",
   "type": "library",
   "license": "MIT",
+  "keywords": [
+    "doctorsender",
+    "api"
+  ],
   "authors": [
     {
       "name": "Julien Devergnies",
