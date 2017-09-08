@@ -1,0 +1,4 @@
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+*.php   text eol=lf whitespace=blank-at-eol,tab-in-indent,-space-before-tab,tabwidth=4

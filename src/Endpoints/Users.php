@@ -33,10 +33,9 @@ class Users extends Endpoint
         $listName = $options['listName'];
         $user = $options['user'];
 
+        $isTestList = false;
         if (isset($options['isTestList'])) {
             $isTestList = true;
-        } else {
-            $isTestList = false;
         }
 
         return $this->client->webservice(
