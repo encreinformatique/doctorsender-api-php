@@ -12,17 +12,7 @@ We also wanted to have a better PSR format.
 
 Installation instruction
 ------------------------
-1. Add the repository to your composer.json
-```json
- "repositories": [
-   {
-     "type": "git",
-     "url": "git@github.com:encreinformatique/doctorsender-api-php.git"
-   }
- ],
-```
-
-2. Add the package to your dependencies by running
+* Add the package to your dependencies by running
 `composer require encreinformatique/doctorsender-api-php`
 
 Documentation
