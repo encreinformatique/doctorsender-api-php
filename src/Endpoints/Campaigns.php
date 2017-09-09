@@ -45,10 +45,9 @@ class Campaigns extends Endpoint
          */
         if (isset($options['date'])) {
             if (!empty($options['date']['start'])) {
-                if (empty($options['date']['end'])) {
+                $endDate = new \DateTime("tomorrow");
+                if (!empty($options['date']['end'])) {
                     $endDate = $options['date']['end'];
-                } else {
-                    $endDate = new \DateTime("tomorrow");
                 }
                 $sqlWhereDate = 'send_date between \''.$options['date']['start']->format("Y-m-d").'\' and \''.$endDate->format("Y-m-d").'\'';
             } elseif (!empty($options['date']['end'])) {
@@ -73,19 +72,17 @@ class Campaigns extends Endpoint
         /*
          * We define the fields.
          */
+        $fields = $this->fields;
         if (isset($options['fields'])) {
             $fields = $options['fields'];
-        } else {
-            $fields = $this->fields;
         }
 
         /*
          * Override the limit.
          */
+        $limit = $this->limit;
         if (isset($options['limit'])) {
             $limit = $options['limit'];
-        } else {
-            $limit = $this->limit;
         }
 
         return $this->client->webservice(
@@ -109,10 +106,9 @@ class Campaigns extends Endpoint
         /*
          * We define the fields.
          */
+        $fields = $this->fields;
         if (isset($options['fields'])) {
             $fields = $options['fields'];
-        } else {
-            $fields = $this->fields;
         }
 
         return $this->client->webservice(

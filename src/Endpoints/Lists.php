@@ -21,10 +21,9 @@ class Lists extends Endpoint
      */
     public function getList($options)
     {
+        $isTestList = false;
         if (isset($options['isTestList'])) {
             $isTestList = true;
-        } else {
-            $isTestList = false;
         }
 
         return $this->client->webservice(
@@ -45,15 +44,14 @@ class Lists extends Endpoint
         }
         $listName = $options['name'];
 
+        $isTestList = false;
         if (isset($options['isTestList'])) {
             $isTestList = true;
-        } else {
-            $isTestList = false;
         }
+
+        $getType = false;
         if (isset($options['getType'])) {
             $getType = true;
-        } else {
-            $getType = false;
         }
 
         return $this->client->webservice(

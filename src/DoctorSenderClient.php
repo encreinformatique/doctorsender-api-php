@@ -79,8 +79,8 @@ class DoctorSenderClient
         }
         if ($result["error"] === true) {
             throw new \Exception($result["msg"]);
-        } else {
-            return $result["msg"];
         }
+
+        return $result["msg"];
     }
 }
