@@ -1,1 +1,4 @@
 infos/*
+.idea/
+vendor/
+composer.lock
