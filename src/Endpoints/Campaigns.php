@@ -4,7 +4,19 @@ namespace EncreInformatique\DoctorSenderApi\Endpoints;
 
 class Campaigns extends Endpoint
 {
-    private $fields = array("name", "amount", "subject", "html", "text", "list_unsubscribe", "send_date", "status", "user_list", "country", "utm_source", "utm_medium", "utm_term", "utm_content", "utm_campaign");
+    const STATUS_FINISHED = 'finished';
+    const DEFAULT_FIELDS = array("name", "amount", "subject", "html", "text", "list_unsubscribe", "send_date", "status", "user_list", "country", "utm_source", "utm_medium", "utm_term", "utm_content", "utm_campaign");
+
+    /*
+     * Maximum number of returned campaigns.
+     * 0 means all campaigns with the indicated conditions
+     */
+    const DEFAULT_LIMIT = 10;
+
+    /*
+     * Error messages
+     */
+    const ERROR_NO_ID = 'no campaign id was provided';
 
     /*
      * SoapClient $client
@@ -19,12 +31,6 @@ class Campaigns extends Endpoint
      */
     private $withStatistics = 1;
 
-    /*
-     * Maximum number of returned campaigns.
-     * 0 means all campaigns with the indicated conditions 
-     */
-    private $limit = 10;
-
     public function __construct($client)
     {
         $this->client = $client;
@@ -38,7 +44,7 @@ class Campaigns extends Endpoint
      */
     public function getList($options)
     {
-        $sqlWhere = 'status = \'finished\'';
+        $sqlWhere = 'status = \''.self::STATUS_FINISHED.'\'';
 
         /*
          * We define the Date filters.
@@ -72,7 +78,7 @@ class Campaigns extends Endpoint
         /*
          * We define the fields.
          */
-        $fields = $this->fields;
+        $fields = self::DEFAULT_FIELDS;
         if (isset($options['fields'])) {
             $fields = $options['fields'];
         }
@@ -80,7 +86,7 @@ class Campaigns extends Endpoint
         /*
          * Override the limit.
          */
-        $limit = $this->limit;
+        $limit = self::DEFAULT_LIMIT;
         if (isset($options['limit'])) {
             $limit = $options['limit'];
         }
@@ -99,14 +105,14 @@ class Campaigns extends Endpoint
     public function getOne($options)
     {
         if (!isset($options['id'])) {
-            return ['error' => true, 'msg' => 'no campaign id was provided'];
+            return ['error' => true, 'msg' => self::ERROR_NO_ID];
         }
         $idCampaign = $options['id'];
 
         /*
          * We define the fields.
          */
-        $fields = $this->fields;
+        $fields = self::DEFAULT_FIELDS;
         if (isset($options['fields'])) {
             $fields = $options['fields'];
         }
