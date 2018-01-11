@@ -2,9 +2,10 @@
 
 namespace tests\EncreInformatique\DoctorSenderApi\Endpoints;
 
+use PHPUnit\Framework\TestCase;
 use EncreInformatique\DoctorSenderApi\Endpoints\Campaigns;
 
-class CampaignsTest extends \PHPUnit_Framework_TestCase
+class CampaignsTest extends TestCase
 {
     const DS_METHOD_GET_LIST = 'dsCampaignGetAll';
     const DS_METHOD_GET_ONE = 'dsCampaignGet';
