@@ -41,6 +41,7 @@ class Campaigns extends Endpoint
      * We get the List of Campaigns.
      *
      * @param $options
+     * @return array
      */
     public function getList($options)
     {
@@ -60,7 +61,9 @@ class Campaigns extends Endpoint
                 $sqlWhereDate = 'send_date <= \''.$options['date']['end']->format("Y-m-d").'\'';
             }
 
-            $sqlWhere.= ' and '.$sqlWhereDate;
+            if (isset($sqlWhereDate)) {
+                $sqlWhere.= ' and '.$sqlWhereDate;
+            }
         }
 
         /*
