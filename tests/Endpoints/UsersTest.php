@@ -4,7 +4,6 @@ namespace tests\EncreInformatique\DoctorSenderApi;
 
 use PHPUnit\Framework\TestCase;
 use EncreInformatique\DoctorSenderApi\DoctorSenderClient;
-use EncreInformatique\DoctorSenderApi\Endpoints\Users;
 
 class UsersTest extends TestCase
 {
