@@ -18,6 +18,7 @@ class Users extends Endpoint
      * We get the list of Fields of a Users List.
      *
      * @param $options
+     * @return mixed
      */
     public function create($options)
     {
@@ -34,7 +35,7 @@ class Users extends Endpoint
         $user = $options['user'];
 
         $isTestList = false;
-        if (isset($options['isTestList'])) {
+        if (isset($options['isTestList']) && true === $options['isTestList']) {
             $isTestList = true;
         }
 
