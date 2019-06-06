@@ -41,7 +41,8 @@ class Users extends Endpoint
 
         return $this->client->webservice(
             'dsUsersListAdd',
-            array($listName, $user, $isTestList)
+            array($listName, $user, $isTestList),
+            []
         );
     }
 }
