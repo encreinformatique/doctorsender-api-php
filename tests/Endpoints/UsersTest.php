@@ -10,13 +10,13 @@ class UsersTest extends TestCase
 {
     /**
      * @test
-     *
-     * @expectedException \Exception
-     * @expectedExceptionMessage no name of list was provided
      */
     public function failBecauseEmptyListNameEndpoint()
     {
-        $username = 'abc';
+        self::expectException(\Exception::class);
+        self::expectExceptionMessage('no name of list was provided');
+
+	$username = 'abc';
         $api_token = '123';
 
         $ws = new DoctorSenderClient($username, $api_token);
@@ -25,12 +25,12 @@ class UsersTest extends TestCase
 
     /**
      * @test
-     *
-     * @expectedException \Exception
-     * @expectedExceptionMessage no correct user was provided
      */
     public function failBecauseEmptyUserEndpoint()
     {
+        self::expectException(\Exception::class);
+	self::expectExceptionMessage('no correct user was provided');
+	
         $username = 'abc';
         $api_token = '123';
 

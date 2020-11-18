@@ -9,12 +9,12 @@ class DoctorSenderClientTest extends TestCase
 {
     /**
      * @test
-     *
-     * @expectedException \RuntimeException
-     * @expectedExceptionMessage The User or the Token cannot be nulled.
      */
     public function failInitialisation()
     {
+        self::expectException(\RuntimeException::class);
+        self::expectExceptionMessage('The User or the Token cannot be nulled.');
+
         $username = null;
         $api_token = null;
 
@@ -23,11 +23,11 @@ class DoctorSenderClientTest extends TestCase
 
     /**
      * @test
-     *
-     * @expectedException \Exception
      */
     public function failEndpoint()
     {
+        self::expectException(\Exception::class);
+
         $username = null;
         $api_token = null;
 

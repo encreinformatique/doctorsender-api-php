@@ -10,12 +10,12 @@ class SegmentsTest extends TestCase
 {
     /**
      * @test
-     *
-     * @expectedException \Exception
-     * @expectedExceptionMessage no name of list was provided
      */
     public function failBecauseEmptyListNameEndpoint()
     {
+        self::expectException(\Exception::class);
+        self::expectExceptionMessage('no name of list was provided');
+
         $username = 'abc';
         $api_token = '123';
 
