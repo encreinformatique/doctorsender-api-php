@@ -30,7 +30,7 @@ class UsersTest extends TestCase
     {
         self::expectException(\Exception::class);
 	self::expectExceptionMessage('no correct user was provided');
-	
+
         $username = 'abc';
         $api_token = '123';
 
@@ -51,8 +51,13 @@ class UsersTest extends TestCase
             'isTestList' => false
         ];
 
-        $soapClientMock = $this->getMockFromWsdl(DoctorSenderClient::WEBSERVICE_URL);
+//        $soapClientMock = $this->getMockFromWsdl(DoctorSenderClient::WEBSERVICE_URL);
+        $soapClientMock = $this->getMockBuilder(\SoapClient::class)
+            ->disableOriginalConstructor()
+            ->addMethods(['webservice'])
+            ->getMock();
         $soapClientMock
+            ->expects(self::once())
             ->method('webservice')
             ->with(
                 'dsUsersListAdd',
@@ -60,10 +65,9 @@ class UsersTest extends TestCase
             )
             ->willReturn(true);
 
-
         $endpoint = new Users($soapClientMock);
         $response = $endpoint->create($options);
 
-        $this->assertTrue($response);
+        self::assertTrue($response);
     }
 }

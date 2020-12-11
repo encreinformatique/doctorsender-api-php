@@ -17,8 +17,10 @@ class DoctorSenderClient
     /**
      * The Constructor of DoctorSenderClient
      *
-     * @param user: the Username for the authorization.
-     * @param token: the Token for the authorization.
+     * @param string $user : the Username for the authorization.
+     * @param string $token : the Token for the authorization.
+     * @throws \SoapFault
+     * @throws \RuntimeException
      */
     public function __construct($user, $token)
     {
@@ -39,8 +41,8 @@ class DoctorSenderClient
     /**
      * We make the Request to the API.
      *
-     * @param endpoint
-     * @throws Exception
+     * @param string $endpoint
+     * @throws \Exception
      * @return string
      */
     public function makeRequest($endpoint, $options)
