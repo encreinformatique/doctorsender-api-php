@@ -22,7 +22,7 @@ class DoctorSenderClient
      * @throws \SoapFault
      * @throws \RuntimeException
      */
-    public function __construct($user, $token)
+    public function __construct(string $user, string $token)
     {
         if (!class_exists("SoapClient")) {
             throw new \RuntimeException("The SoapClient class needs to be available.");

@@ -10,6 +10,8 @@ We found the proper API of DoctorSender to be poorly documentated compared to ot
 
 We also wanted to have a better PSR format.
 
+The library is available for PHP >=7.2. For lower version of PHP, refer to the 1.x branch.
+
 Installation instruction
 ------------------------
 * Add the package to your dependencies by running

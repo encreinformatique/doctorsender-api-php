@@ -2,6 +2,8 @@
 ====================
 
 ```php
+use EncreInformatique\DoctorSenderApi\DoctorSenderClient;
+
 $ws = new DoctorSenderClient($username, $api_token);
 try {
     $campaigns = $ws->makeRequest('campaigns/list', ['fields' => ["name", "amount", "subject", "list_unsubscribe", "send_date", "status", "user_list", "country"], 'date' => ['start' => new \DateTime('2017-05-01'), 'end' => new \DateTime('2017-05-10')]]);
@@ -13,6 +15,8 @@ try {
 ```
 
 ```php
+use EncreInformatique\DoctorSenderApi\DoctorSenderClient;
+
 $user = array(
     'email' => 'email@domain.tld',
     'field_firstname' => 'firstname',
