@@ -27,9 +27,6 @@ class DoctorSenderClient
         if (!class_exists("SoapClient")) {
             throw new \RuntimeException("The SoapClient class needs to be available.");
         }
-        if ($user === null || $token === null) {
-            throw new \RuntimeException("The User or the Token cannot be nulled.");
-        }
 
         /*
          * We initialize the Client to be ready to use on each Request.
