@@ -1,7 +1,7 @@
 # DoctorSender API PHP
 [![Build Status](https://travis-ci.org/encreinformatique/doctorsender-api-php.svg?branch=master)](https://travis-ci.org/encreinformatique/doctorsender-api-php)
 [![Downloads](https://img.shields.io/packagist/dt/encreinformatique/doctorsender-api-php.svg)](https://packagist.org/packages/encreinformatique/doctorsender-api-php)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/faded0ba-05e4-41cf-8341-7ffc73e6d6b9/mini.png)](https://insight.sensiolabs.com/projects/faded0ba-05e4-41cf-8341-7ffc73e6d6b9)[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/encreinformatique/doctorsender-api-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/encreinformatique/doctorsender-api-php/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/encreinformatique/doctorsender-api-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/encreinformatique/doctorsender-api-php/?branch=master)
 ====================
 This repository is a PHP wrapper for the DoctorSender API.
 
