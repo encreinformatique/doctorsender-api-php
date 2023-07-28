@@ -116,12 +116,19 @@ class CampaignsTest extends TestCase
      */
     public function getOneWithoutId()
     {
-        $soapClient = $this->getMockBuilder(\SoapClient::class)
+        if (!method_exists($this, 'addMethods')) {
+            $soapClient = $this->getMockBuilder(\SoapClient::class)
+                ->disableOriginalConstructor()
+                ->setMethods(['webservice'])
+                ->getMock();
+        } else {
+            $soapClient = $this->getMockBuilder(\SoapClient::class)
             ->disableOriginalConstructor()
-            ->setMethods(['webservice'])
+            ->addMethods(['webservice'])
             ->getMock();
-        $soapClient->expects($this->never())
-            ->method('webservice');
+        }
+            
+        $soapClient->expects($this->never())->method('webservice');
 
         $campaignEndpoint = new Campaigns($soapClient);
         $result = $campaignEndpoint->getOne([]);
@@ -164,10 +171,17 @@ class CampaignsTest extends TestCase
      */
     private function getClient($response = [], $dsMethod = '', $arguments = [])
     {
-        $soapClient = $this->getMockBuilder(\SoapClient::class)
+        if (!method_exists($this, 'addMethods')) {
+            $soapClient = $this->getMockBuilder(\SoapClient::class)
+                ->disableOriginalConstructor()
+                ->setMethods(['webservice'])
+                ->getMock();
+        } else {
+            $soapClient = $this->getMockBuilder(\SoapClient::class)
             ->disableOriginalConstructor()
-            ->setMethods(['webservice'])
+            ->addMethods(['webservice'])
             ->getMock();
+        }
 
         $soapClient->expects($this->atMost(1))
             ->method('webservice')
